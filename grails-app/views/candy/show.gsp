@@ -23,6 +23,15 @@
 			</g:if>
 			<ol class="property-list candy">
 			
+				<g:if test="${candyInstance?.sku}">
+				<li class="fieldcontain">
+					<span id="sku-label" class="property-label"><g:message code="candy.sku.label" default="Sku" /></span>
+					
+						<span class="property-value" aria-labelledby="sku-label"><g:fieldValue bean="${candyInstance}" field="sku"/></span>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${candyInstance?.candyName}">
 				<li class="fieldcontain">
 					<span id="candyName-label" class="property-label"><g:message code="candy.candyName.label" default="Candy Name" /></span>
@@ -54,7 +63,7 @@
 				<li class="fieldcontain">
 					<span id="pictureUrl-label" class="property-label"><g:message code="candy.pictureUrl.label" default="Picture Url" /></span>
 					
-						<span class="property-value" aria-labelledby="pictureUrl-label"><g:img uri="${candyInstance.pictureUrl}"/></span>
+						<span class="property-value" aria-labelledby="pictureUrl-label"><g:fieldValue bean="${candyInstance}" field="pictureUrl"/></span>
 					
 				</li>
 				</g:if>

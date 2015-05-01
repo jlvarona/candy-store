@@ -2,6 +2,15 @@
 
 
 
+<div class="fieldcontain ${hasErrors(bean: candyInstance, field: 'sku', 'error')} required">
+	<label for="sku">
+		<g:message code="candy.sku.label" default="Sku" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="sku" required="" value="${candyInstance?.sku}"/>
+
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: candyInstance, field: 'candyName', 'error')} required">
 	<label for="candyName">
 		<g:message code="candy.candyName.label" default="Candy Name" />

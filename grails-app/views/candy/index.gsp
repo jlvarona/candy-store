@@ -24,6 +24,8 @@
 			<thead>
 					<tr>
 					
+						<g:sortableColumn property="sku" title="${message(code: 'candy.sku.label', default: 'Sku')}" />
+					
 						<g:sortableColumn property="candyName" title="${message(code: 'candy.candyName.label', default: 'Candy Name')}" />
 					
 						<g:sortableColumn property="candyPrice" title="${message(code: 'candy.candyPrice.label', default: 'Candy Price')}" />
@@ -38,13 +40,16 @@
 				<g:each in="${candyInstanceList}" status="i" var="candyInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${candyInstance.id}">${fieldValue(bean: candyInstance, field: "candyName")}</g:link></td>
+						<td><g:link action="show" id="${candyInstance.id}">${fieldValue(bean: candyInstance, field: "sku")}</g:link></td>
+					
+						<td>${fieldValue(bean: candyInstance, field: "candyName")}</td>
 					
 						<td>${fieldValue(bean: candyInstance, field: "candyPrice")}</td>
 					
 						<td>${fieldValue(bean: candyInstance, field: "currentQuantity")}</td>
 					
-						<td>${fieldValue(bean: candyInstance, field: "pictureUrl")}</td>
+						<td><asset:image src="${candyInstance.pictureUrl}" width="60" height="60"/></td>
+						
 					
 					</tr>
 				</g:each>

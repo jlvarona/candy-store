@@ -11,26 +11,59 @@
     	<header>
     		<h2>Contact us below...</h2>
         </header>
-		<g:form id="frmContactUs" title ="Contact Us" method="post" action="index.html">
+		<g:form url="[controller: 'main', action:'saveContact']" id="frmContactUs">
 		<table>
 		<tr>
-		<td>First name:</td>
-		<td><input id="txtFirstName" type="text" name="fname" maxlength="25"></td>
+		<td>
+		<div class="fieldcontain ${hasErrors(bean: contactInstance, field: 'firstName', 'error')} required">
+	<label for="firstName">
+		<g:message code="contact.firstName.label" default="First Name" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField id="txtFirstName" name="firstName" required="" value="${contactInstance?.firstName}"/>
+
+</div>
+		</td>
 		</tr>
 		<tr>
-		<td>Last name:</td>
-		<td><input id="txtLastName" type="text" name="lname" maxlength="50"></td>
+		<td>
+<div class="fieldcontain ${hasErrors(bean: contactInstance, field: 'lastName', 'error')} required">
+	<label for="lastName">
+		<g:message code="contact.lastName.label" default="Last Name" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField id="txtLastName" name="lastName" required="" value="${contactInstance?.lastName}"/>
+
+</div>
+		</td>
 		</tr>
 		<tr>
-		<td>Phone Number:</td>
-		<td><input id="txtPhoneNumber" type="text" name="phone" maxlength="10" onkeypress='return event.charCode >= 48 && event.charCode <= 57'></td>
+		<td>
+<div class="fieldcontain ${hasErrors(bean: contactInstance, field: 'phoneNumber', 'error')} required">
+	<label for="phoneNumber">
+		<g:message code="contact.phoneNumber.label" default="Phone Number" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField id="txtPhoneNumber" name="phoneNumber" pattern="${contactInstance.constraints.phoneNumber.matches}" required="" value="${contactInstance?.phoneNumber}"/>
+
+</div>
+		</td>		
 		</tr>
 		<tr>
-		<td style="vertical-align:top;">Message:</td>
-		<td><textarea id="txtMessage" name="msg" rows="4" cols="50"></textarea></td>
+		<td style="vertical-align:top;">
+											<div class="fieldcontain ${hasErrors(bean: contactInstance, field: 'message', 'error')} required">
+	<label for="message">
+		<g:message code="contact.message.label" default="Message" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField id="txtMessage" name="message" required="" value="${contactInstance?.message}" rows="4" cols="50"/>
+
+</div>
+
+		</td>
 		</tr>
 		</table>
- 		<input id="btnSubmitContactUs" type="submit" value="Submit" >
+ 		<g:submitButton id="btnSubmitContactUs" name="submit" class="saveContact" value="${message(code: 'default.button.submit.label', default: 'Submit')}" />
 		
   		</g:form>
 		<div id="photo">

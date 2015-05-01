@@ -18,6 +18,7 @@
 	</head>
 	<body>
 		<div id="candyStoreLogo" role="banner"><a href="http://store.agiletestingframework.com/candystore/"><asset:image src="ATF-Candy-logo1.png" alt="CandyStore"/></a></div>
+		<g:formatDate format="yyyy-MM-dd" date="${new Date()}"/>
 	    <nav id="global">
     		<ul>
         		<li><g:link controller="main" action="home">Home</g:link></li>

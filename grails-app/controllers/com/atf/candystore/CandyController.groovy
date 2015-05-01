@@ -3,6 +3,7 @@ package com.atf.candystore
 
 
 import static org.springframework.http.HttpStatus.*
+import grails.rest.RestfulController;
 import grails.transaction.Transactional
 
 @Transactional(readOnly = true)

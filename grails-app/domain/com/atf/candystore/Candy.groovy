@@ -8,13 +8,15 @@ package com.atf.candystore
  *
  */
 class Candy {
+	String sku
 	String candyName
 	long currentQuantity
 	BigDecimal candyPrice
 	String pictureUrl
 	
 	static constraints = {
-		candyName blank: false, unique: true
+		sku blank:false, unique: true
+		candyName blank: false
 		candyPrice blank: false
 		currentQuantity blank: false
 		pictureUrl nullable: true

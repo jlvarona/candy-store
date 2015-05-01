@@ -1,5 +1,6 @@
 package com.atf.candystore
 
+
 class CandyOrderLine {
 	static belongsTo = [order : CandyOrder]
 	Candy candy;

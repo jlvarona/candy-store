@@ -31,6 +31,9 @@ grails.mime.types = [ // the first one is the default format
     xml:           ['text/xml', 'application/xml']
 ]
 
+//The ACCEPT header will be used for content negotiation
+grails.mime.use.accept.header = true
+
 // URL Mapping Cache Max Size, defaults to 5000
 //grails.urlmapping.cache.maxsize = 1000
 
@@ -61,6 +64,8 @@ grails {
 
 
 grails.converters.encoding = "UTF-8"
+grails.converters.json.default.deep = true
+
 // scaffolding templates configuration
 grails.scaffolding.templates.domainSuffix = 'Instance'
 
