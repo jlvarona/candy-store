@@ -1,6 +1,10 @@
+import org.h2.tools.Server;
+
 import com.atf.candystore.Candy
 import com.atf.candystore.CandyOrder
 import com.atf.candystore.CandyOrderLine
+
+import groovy.sql.Sql
 
 class BootStrap {
 
@@ -17,6 +21,9 @@ class BootStrap {
 		order.save()
 		new CandyOrderLine(order: order, quantity: 10, priceXUnit: 0.60, total: 6.00, candy: one).save()
 		new CandyOrderLine(order: order, quantity: 20, priceXUnit: 0.60, total: 12.00, candy: two).save()
+		
+		
+		Server.createTcpServer('-tcpPort', '9123', '-tcpAllowOthers').start()
 		
 		    }
     def destroy = {

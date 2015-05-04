@@ -12,6 +12,6 @@ class UrlMappings {
 		
 		"/candyorderREST/orderCandy"(controller: "CandyOrderREST", action: "orderCandy")
 		
-		"/candyorderREST/getOrder"(controller: "CandyOrderREST", action: "getOrder")
+		"/candyorderREST/getOrder/$id?"(controller: "CandyOrderREST", action: "getOrder")
 	}
 }

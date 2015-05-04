@@ -20,7 +20,7 @@
 		<g:message code="contact.firstName.label" default="First Name" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField id="txtFirstName" name="firstName" required="" value="${contactInstance?.firstName}"/>
+	<g:textField id="txtFirstName" name="firstName" maxlength="25" required="" value="${contactInstance?.firstName}"/>
 
 </div>
 		</td>
@@ -56,7 +56,7 @@
 		<g:message code="contact.message.label" default="Message" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField id="txtMessage" name="message" required="" value="${contactInstance?.message}" rows="4" cols="50"/>
+	<g:textArea id="txtMessage" name="message" required="" value="${contactInstance?.message}" rows="4" cols="50"/>
 
 </div>
 

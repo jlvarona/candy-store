@@ -21,7 +21,8 @@ class CandyOrderService {
 			lineTotal = candy.candyPrice * it.quantity
 			order.orderTotal = order.orderTotal + lineTotal
 			validateQuantity(candy, it.quantity)
-			new CandyOrderLine(order: order, quantity: it.quantity, priceXUnit: candy.candyPrice, total: lineTotal, candy: candy).save()			
+			CandyOrderLine orderLine = new CandyOrderLine(order: order, quantity: it.quantity, priceXUnit: candy.candyPrice, total: lineTotal, candy: candy).save()
+			order.addToOrderLine(orderLine)			
 		}
 		order.save()
 		return order

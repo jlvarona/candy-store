@@ -8,7 +8,7 @@ class Contact {
 	String message
 	
 	static constraints = {
-		firstName blank:false 
+		firstName blank:false, size: 1..25 
 		lastName blank:false 
 		phoneNumber matches:"\\(\\d\\d\\d\\) \\d\\d\\d-\\d\\d\\d\\d" 
 		message blank:false
