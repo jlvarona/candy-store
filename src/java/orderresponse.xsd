@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/order"
+	xmlns:tns="http://www.example.org/order" elementFormDefault="qualified">
+	<xs:element name="candyOrder">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="orderLines">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element maxOccurs="unbounded" name="orderLine">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="candy">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="candyName" type="xs:string" />
+													<xs:element name="candyPrice" type="xs:decimal" />
+													<xs:element name="currentQuantity" type="xs:unsignedShort" />
+													<xs:element name="pictureUrl" type="xs:string" />
+													<xs:element name="sku" type="xs:unsignedByte" />
+												</xs:sequence>
+												<xs:attribute name="id" type="xs:unsignedByte"
+													use="required" />
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="order" type="xs:unsignedByte" />
+										<xs:element name="priceXUnit" type="xs:decimal" />
+										<xs:element name="quantity" type="xs:unsignedByte" />
+										<xs:element name="total" type="xs:decimal" />
+									</xs:sequence>
+									<xs:attribute name="id" type="xs:unsignedByte"
+										use="required" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="orderTotal" type="xs:decimal" />
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:unsignedByte" use="required" />
+		</xs:complexType>
+	</xs:element>
+</schema>

@@ -40,6 +40,7 @@ grails.mime.use.accept.header = true
 // Legacy setting for codec used to encode data with ${}
 grails.views.default.codec = "html"
 
+
 // The default scope for controllers. May be prototype, session or singleton.
 // If unspecified, controllers are prototype scoped.
 grails.controllers.defaultScope = 'singleton'
@@ -96,7 +97,7 @@ environments {
     }
     production {
         grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://Default-Environment-zwiwwrig5j.elasticbeanstalk.com"
     }
 }
 

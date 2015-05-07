@@ -2,14 +2,25 @@ package com.atf.candystore.service
 
 import grails.transaction.Transactional
 
+import javax.jws.WebMethod
+import javax.jws.WebParam
+import javax.jws.WebResult
+
+import org.grails.cxf.utils.GrailsCxfEndpoint
+
 import com.atf.candystore.Candy
 import com.atf.candystore.CandyOrder
 import com.atf.candystore.CandyOrderLine
 import com.atf.candystore.pogo.OrderPogo
 
+
+
 @Transactional
+//@GrailsCxfEndpoint()
 class CandyOrderService {
 
+//	@WebMethod
+//	@WebResult(name="newOrder")
     def createOrder(OrderPogo orderP) {
 		CandyOrder order = new CandyOrder();
 		order.save()

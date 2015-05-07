@@ -11,8 +11,8 @@
     	<header>
     		<h2>Do you love CANDY as much as we do?</h2>
         </header>
-        <p name="whyWeLoveCandy">Lorem ipsum dolor sit amet, consectetur because it is sweet elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
-        <a href="underConstruction.html">Read More here!</a>
+        <p name="whyWeLoveCandy">Candy, also called sweets or lollies, is a confection that features sugar as a principal ingredient. The category, called sugar confectionery, encompasses any sweet confection, including chocolate, chewing gum, and sugar candy. Vegetables, fruit, or nuts which have been glazed and coated with sugar are said to be candied. </p>
+        <a href="http://en.wikipedia.org/wiki/Candy">Read More here!</a>
         <div id="photo">
         	<div>
             	<h3>Candy Store EDU</h3>
@@ -20,7 +20,6 @@
         </div>
     </section>
 	<blockquote cite="http://en.wikipedia.org/wiki/Trident_(gum)">4 out of 5 dentists approve our candy!</blockquote>
-	<dialog open>What do you think?</dialog>
   </div>
 </body>
 </html>

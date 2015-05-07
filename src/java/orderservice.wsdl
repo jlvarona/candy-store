@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.candystore.org/orderservice/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="orderservice" targetNamespace="http://www.candystore.org/orderservice/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.candystore.org/">
+      <xsd:element name="orderrequest">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="orderLines"
+          		type="tns:orderRequestLineType" maxOccurs="1000"
+          		minOccurs="1" />
+
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="orderresponse">
+        <xsd:complexType>
+        	<xsd:sequence>
+        		<xsd:element name="orderTotal" type="xsd:decimal" />
+        		<xsd:element name="orderLines" type="tns:orderLineType"
+        			maxOccurs="1000" minOccurs="1">
+        		</xsd:element>
+        	</xsd:sequence>
+        	<xsd:attribute name="id" type="xsd:int" use="required"></xsd:attribute>
+        </xsd:complexType>
+      </xsd:element>
+    
+      <xsd:complexType name="orderLineType">
+      	<xsd:sequence>
+      		<xsd:element name="candy" type="tns:candyType">
+
+      		</xsd:element>
+      		<xsd:element name="priceXUnit" type="xsd:decimal"></xsd:element>
+      		<xsd:element name="quantity" type="xsd:int"></xsd:element>
+      		<xsd:element name="total" type="xsd:decimal"></xsd:element>
+      	</xsd:sequence>
+      	<xsd:attribute name="id" type="xsd:int" use="required"></xsd:attribute>
+      </xsd:complexType>
+    
+      <xsd:complexType name="candyType">
+      	<xsd:sequence>
+      		<xsd:element name="candyName" type="xsd:string"></xsd:element>
+      		<xsd:element name="candyPrice" type="xsd:decimal"></xsd:element>
+      		<xsd:element name="currentQuantity" type="xsd:long"></xsd:element>
+      		<xsd:element name="pictureUrl" type="xsd:string"></xsd:element>
+      		<xsd:element name="sku" type="tns:skuType">
+
+      		</xsd:element>
+      	</xsd:sequence>
+      	<xsd:attribute name="id" type="xsd:int" use="required"></xsd:attribute>
+      </xsd:complexType>
+    
+      <xsd:complexType name="orderRequestLineType">
+      	<xsd:sequence>
+      		<xsd:element name="sku" type="tns:skuType"></xsd:element>
+      		<xsd:element name="quantity" type="xsd:int"></xsd:element>
+      	</xsd:sequence>
+      </xsd:complexType>
+    
+      <xsd:simpleType name="skuType">
+      	<xsd:restriction base="xsd:string">
+
+      		<xsd:length value="9"></xsd:length>
+      	</xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createCandyOrderRequest">
+    <wsdl:part element="tns:orderrequest" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="createCandyOrderResponse">
+    <wsdl:part element="tns:orderresponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="orderservice">
+    <wsdl:operation name="createCandyOrder">
+      <wsdl:input message="tns:createCandyOrderRequest"/>
+      <wsdl:output message="tns:createCandyOrderResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="orderserviceSOAP" type="tns:orderservice">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="createCandyOrder">
+      <soap:operation soapAction="http://www.candystore.org/orderservice/createCandyOrder"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="orderservice">
+    <wsdl:port binding="tns:orderserviceSOAP" name="orderserviceSOAP">
+      <soap:address location="http://localhost:8080/CandyStore/orderserviceSOAP"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

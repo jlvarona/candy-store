@@ -17,7 +17,6 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<g:formatDate format="yyyy-MM-dd" date="${new Date()}"/>		
 		<div id="candyStoreLogo" role="banner"><a href="http://store.agiletestingframework.com/candystore/"><asset:image src="ATF-Candy-logo1.png" alt="CandyStore"/></a></div>
 	    <nav id="global">
     		<ul>

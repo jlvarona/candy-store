@@ -1,0 +1,31 @@
+<candyOrder id="1">
+   <orderLines>
+     <orderLine id="1">
+         <candy id="1">
+            <candyName>Milky Way</candyName>
+            <candyPrice>0.6</candyPrice>
+            <currentQuantity>543</currentQuantity>
+            <pictureUrl>candy/milkyway.jpg</pictureUrl>
+            <sku>000000001</sku>
+         </candy>
+         <order>1</order>
+         <priceXUnit>0.6</priceXUnit>
+         <quantity>10</quantity>
+         <total>6.0</total>
+      </orderLine>
+      <orderLine id="2">
+         <candy id="2">
+            <candyName>Twix</candyName>
+            <candyPrice>0.6</candyPrice>
+            <currentQuantity>750</currentQuantity>
+            <pictureUrl>candy/twix.jpg</pictureUrl>
+            <sku>000000002</sku>
+         </candy>
+         <order>1</order>
+         <priceXUnit>0.6</priceXUnit>
+         <quantity>20</quantity>
+         <total>12.0</total>
+      </orderLine>
+   </orderLines>
+   <orderTotal>120.0</orderTotal>
+</candyOrder>
