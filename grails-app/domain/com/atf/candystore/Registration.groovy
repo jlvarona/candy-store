@@ -10,6 +10,7 @@ class Registration {
 	String state
 	String zipCode 
 	String phoneNumber
+	static hasMany = [candyTypes : CandyType]
 	
 	static constraints = {
 		firstName blank: false, size: 1..25

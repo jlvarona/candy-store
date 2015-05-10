@@ -1,4 +1,5 @@
 <%@ page import="com.atf.candystore.Registration" %>
+<%@ page import="com.atf.candystore.CandyType" %>
 
 
 
@@ -14,9 +15,8 @@
 <div class="fieldcontain ${hasErrors(bean: registrationInstance, field: 'middleInitial', 'error')} required">
 	<label for="middleInitial">
 		<g:message code="registration.middleInitial.label" default="Middle Initial" />
-		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="middleInitial" maxlength="1" required="" value="${registrationInstance?.middleInitial}"/>
+	<g:textField name="middleInitial" maxlength="1" value="${registrationInstance?.middleInitial}"/>
 
 </div>
 
@@ -41,9 +41,8 @@
 <div class="fieldcontain ${hasErrors(bean: registrationInstance, field: 'address2', 'error')} required">
 	<label for="address2">
 		<g:message code="registration.address2.label" default="Address2" />
-		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="address2" required="" value="${registrationInstance?.address2}"/>
+	<g:textField name="address2" value="${registrationInstance?.address2}"/>
 
 </div>
 
@@ -68,9 +67,8 @@
 <div class="fieldcontain ${hasErrors(bean: registrationInstance, field: 'phoneNumber', 'error')} required">
 	<label for="phoneNumber">
 		<g:message code="registration.phoneNumber.label" default="Phone Number" />
-		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="phoneNumber" pattern="${registrationInstance.constraints.phoneNumber.matches}" required="" value="${registrationInstance?.phoneNumber}"/>
+	<g:textField name="phoneNumber" pattern="${registrationInstance.constraints.phoneNumber.matches}" value="${registrationInstance?.phoneNumber}"/>
 
 </div>
 
@@ -83,3 +81,11 @@
 
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: registrationInstance, field: 'state', 'error')} required">
+	<label for="candyType">
+		<g:message code="registration.candyType.label" default="What candy types do you like best?:" />
+	</label>
+</div>
+<div class="fieldcontain ${hasErrors(bean: registrationInstance, field: 'state', 'error')} required">
+		<g:select name="candyTypes" from="${CandyType.list()}" optionValue="candyTypeDescription" optionKey="id" multiple='true' class="many-to-one"/>
+</div>

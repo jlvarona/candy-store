@@ -1,10 +1,9 @@
-import org.h2.tools.Server;
+import org.h2.tools.Server
 
 import com.atf.candystore.Candy
 import com.atf.candystore.CandyOrder
 import com.atf.candystore.CandyOrderLine
-
-import groovy.sql.Sql
+import com.atf.candystore.CandyType
 
 class BootStrap {
 
@@ -22,6 +21,14 @@ class BootStrap {
 		new CandyOrderLine(order: order, quantity: 10, priceXUnit: 0.60, total: 6.00, candy: one).save()
 		new CandyOrderLine(order: order, quantity: 20, priceXUnit: 0.60, total: 12.00, candy: two).save()
 		
+		new CandyType(candyTypeCode: "CHK", candyTypeDescription: "Chocolate Bar").save()
+		new CandyType(candyTypeCode: "LOP", candyTypeDescription: "Lolipop").save()
+		new CandyType(candyTypeCode: "HRC", candyTypeDescription: "Hard Candy").save()
+		new CandyType(candyTypeCode: "COK", candyTypeDescription: "Cookies").save()
+		new CandyType(candyTypeCode: "PWR", candyTypeDescription: "Powder Candy").save()
+		new CandyType(candyTypeCode: "SPY", candyTypeDescription: "Spicy Candy").save()
+		new CandyType(candyTypeCode: "SUR", candyTypeDescription: "Sour Candy").save()
+		new CandyType(candyTypeCode: "SSW", candyTypeDescription: "Super Sweet Candy").save()
 		
 		Server.createTcpServer('-tcpPort', '9123', '-tcpAllowOthers').start()
 		

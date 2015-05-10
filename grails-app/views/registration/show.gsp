@@ -1,5 +1,6 @@
 
 <%@ page import="com.atf.candystore.Registration" %>
+<%@ page import="com.atf.candystore.CandyType" %>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -96,6 +97,18 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${registrationInstance?.candyTypes}">
+				<li class="fieldcontain">
+					<span id="candyType-label" class="property-label"><g:message code="registration.candyType.label" default="Candy Types" /></span>
+					
+						<span class="property-value" aria-labelledby="candyTypes-label">
+						<g:each in="${registrationInstance?.candyTypes}" var="candyType" status="i">
+							<g:fieldValue bean="${candyType}" field="candyTypeDescription"/>
+						</g:each>
+						</span>
+					
+				</li>
+				</g:if>
 			</ol>
 		</div>
 	</body>

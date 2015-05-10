@@ -9,7 +9,8 @@ import grails.transaction.Transactional
 class RegistrationController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+	def candyTypes = ["One", "Two", "Three", "Four", "Five"]//CandyType.list()
+	
 //    def index(Integer max) {
 //        params.max = Math.min(max ?: 10, 100)
 //        respond Registration.list(params), model:[registrationInstanceCount: Registration.count()]
