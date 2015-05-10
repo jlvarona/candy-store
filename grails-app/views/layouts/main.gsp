@@ -24,7 +24,7 @@
             	<li><a href="http://www.agiletestingframework.com/about/">About</a></li>
 	            <li><g:link controller="candyServices" action="serviceframe">Services</g:link></li>
     	        <li><g:link controller="candy" action="index">Candy</g:link></li>
-    	        <li><g:link controller="main" action="contact">Contact</g:link></li>
+    	        <li><g:link controller="main" action="contact">Contact Us</g:link></li>
 	        </ul>
 	    </nav>
 		<g:layoutBody/>

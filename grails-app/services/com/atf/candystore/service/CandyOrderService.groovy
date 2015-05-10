@@ -33,11 +33,25 @@ class CandyOrderService {
 			order.orderTotal = order.orderTotal + lineTotal
 			validateQuantity(candy, it.quantity)
 			CandyOrderLine orderLine = new CandyOrderLine(order: order, quantity: it.quantity, priceXUnit: candy.candyPrice, total: lineTotal, candy: candy).save()
-			order.addToOrderLine(orderLine)			
+			order.addToOrderLines(orderLine)			
 		}
 		order.save()
 		return order
     }
+	
+	def deleteOrder(long id)
+	{
+		CandyOrder order = CandyOrder.get(id)
+		if (order != null)
+		{
+			order.delete()
+			return "Order deleted"			
+		}
+		else
+		{
+			return "Order does not exist"
+		}
+	}
 	
 	def validateQuantity(Candy candy, long quantity)
 	{

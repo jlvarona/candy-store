@@ -1,11 +1,23 @@
 package com.atf.candystore
 
-import com.sun.corba.se.spi.orb.OperationFactory.SequenceAction;
+import javax.xml.bind.annotation.XmlAccessType
+import javax.xml.bind.annotation.XmlAccessorType
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement
 
+@XmlAccessorType(XmlAccessType.NONE)
 class CandyOrder {
-	static hasMany = [orderLine : CandyOrderLine]
-//	long orderNumber; 
+	
+	static hasMany = [orderLines : CandyOrderLine]
+	
+	@XmlAttribute
+	long id
+	
+	@XmlElement
 	BigDecimal orderTotal;
+	
+	@XmlElement
+	List<CandyOrderLine> orderLines;
 	
 	static constraints = {
 //		orderNumber blank:false, unique:true
