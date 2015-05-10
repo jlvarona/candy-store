@@ -1,24 +1,3 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-}
-
-body {
-	line-height: 1;
-}
 /* FONT STACK */
 body,
 input, select, textarea {
@@ -60,7 +39,7 @@ html * {
 body {
 	background: url(../images/candy-cane-red-stripes-background.jpg) repeat-y top right;
 	border: none;
-	color: #333;
+	color: #333333;
 	margin: 0 auto;
 	font: 14px/24px Helvetica, Arial, sans-serif;
 	max-width: 960px;
@@ -234,10 +213,6 @@ article {
 nav#categories ul li, nav#archives ul li {
 	list-style: none;
 	margin: 5px 0;
-}
-
-#grailsLogo {
-	background-color: #abbf78;
 }
 
 /* replace with .no-boxshadow body if you have modernizr available */
