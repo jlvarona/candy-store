@@ -17,7 +17,7 @@
 		<g:layoutHead/>
 	</head>
 	<body>
-		<div id="candyStoreLogodiv" role="banner"><a href="http://store.agiletestingframework.com/candystore/"><asset:image id="candyStoreLogo" src="ATF-Candy-logo1.png" alt="CandyStore"/></a></div>
+		<div id="candyStoreLogodiv" role="banner"><g:link controller="main" action="home"><asset:image id="candyStoreLogo" src="ATF-Candy-logo1.png" alt="CandyStore"/></g:link></div>
 	    <nav id="global">
     		<ul>
         		<li><g:link controller="main" action="home">Home</g:link></li>
