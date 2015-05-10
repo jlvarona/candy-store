@@ -29,11 +29,12 @@ $(document).ready(function() {
             	<h3>Candy Store EDU</h3>
             </div>
         </div>
-        <div class="contentPost">
+        <div class="contentPost" id="delayeddiv">
         	<asset:image id="delayedImage" src="candy/iwantcandy.jpg"/>
 		</div>
     </section>
 	<blockquote cite="http://en.wikipedia.org/wiki/Trident_(gum)">4 out of 5 dentists approve our candy!</blockquote>
+	<blockquote cite="https://www.life360.com/blog/health-benefits-of-candy-2/">People who eat candy live longer!</blockquote>
   </div>
 </body>
 </html>

@@ -28,6 +28,8 @@
 	        </ul>
 	    </nav>
 		<g:layoutBody/>
+		<div class="footer" role="contentinfo"></div>		
+		<div class="footer" role="contentinfo">123 Candy Store Ln., SweetVille, AZ 12345</div>
 		<div class="footer" role="contentinfo"></div>
 		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 	</body>

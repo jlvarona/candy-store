@@ -10,12 +10,19 @@ import com.atf.candystore.CandyOrder
 import com.atf.candystore.pogo.OrderPogo
 
 
-@GrailsCxfEndpoint()
+@GrailsCxfEndpoint(address = "/i/love/turtles/v1/zombie")
 class CandyOrderSOAPService {
 
 	@WebMethod
+	@WebResult(name="orderResponse")
+	def String createCandyOrder(@WebParam(name="orderRequest") String orderPogo)
+	{
+		return param.toString()
+	}
+/*	@WebMethod
 	@WebResult(name="orderResponse")	
     def CandyOrder createCandyOrder(@WebParam(name="orderRequest") OrderPogo orderPogo) {
 		return CandyOrderService.createOrder(orderPogo)		
     }
+    */
 }
