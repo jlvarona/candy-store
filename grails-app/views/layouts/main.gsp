@@ -22,7 +22,7 @@
     		<ul>
         		<li><g:link controller="main" action="home">Home</g:link></li>
             	<li><a href="http://www.agiletestingframework.com/about/">About</a></li>
-	            <li><a href="http://www.agiletestingframework.com/services/">Services</a></li>
+	            <li><g:link controller="candyServices" action="serviceframe">Services</g:link></li>
     	        <li><g:link controller="candy" action="index">Candy</g:link></li>
     	        <li><g:link controller="main" action="contact">Contact</g:link></li>
 	        </ul>
